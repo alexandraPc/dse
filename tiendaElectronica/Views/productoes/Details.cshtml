@@ -1,0 +1,58 @@
+﻿@model tiendaElectronica.producto
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles del producto</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_proveedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_proveedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imagen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imagen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href='@Url.Action("Edit", "productoes", new { id=Model.id_producto })' class="btn btn-primary">Editar</a>
+    <a href='@Url.Action("Index", "productoes")' class="btn btn-primary">Regresar</a>
+</p>
