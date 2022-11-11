@@ -1,0 +1,70 @@
+﻿@model IEnumerable<usuarios.usuario>
+
+@{
+    ViewBag.Title = "Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Usuario</h2>
+
+<div class="table" style="text-align:right;padding:5px">
+    <a href="~/usuarios/create/" class="btn btn-primary">Nuevo usuario</a>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.edad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dui)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.genero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_rol)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.edad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dui)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.genero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_rol)
+        </td>
+        <td>
+            <a href='@Url.Action("Edit", "usuarios", new { id=item.id_usuario })' class="btn btn-primary">Editar</a>
+            <a href='@Url.Action("Details", "usuarios", new { id=item.id_usuario })' class="btn btn-default">Detalles</a>
+            <a href='@Url.Action("Delete", "usuarios", new { id=item.id_usuario })' class="btn btn-danger">Eliminar</a>
+        </td>
+    </tr>
+}
+
+</table>
